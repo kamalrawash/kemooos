@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KOT</title>
+    
+    {% if header %}
+    <style type="text/css">
+      .slider {
+        background-image:url({{header.image_eng.url}})
+      }
+    </style>
+    {% endif %}
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body >
+
+ <nav>
+          <div >
+            <ul>
+               <li><a href="/courses/">Courses</a></li>
+              <li><a href="/newslist/">News</a></li>
+              <li><a href="/aboutus/">About</a></li>
+              <!--<li><a href="/imagegallery/">Gallery</a></li>-->
+              <li><a href="/contactus/">Contact</a></li>
+              <li><a href="/home_ar/">عربي</a></li>                                                    
+            </ul>
+          </div>
+        </nav>
+        </body>
+        </html>
+

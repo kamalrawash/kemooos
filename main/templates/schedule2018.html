@@ -1,0 +1,125 @@
+{% extends 'base2.html' %}
+{% load staticfiles %}
+
+{% block body %}
+<br/>
+
+<div class="container" dir:"rtl" >
+<table class="tabel table-bordered table-responsive" dir="rtl"  >
+  <tr style="background-color: #5A1669; color: #FFFFFF;">
+    <td style="text-align: center;"><b>م</b></td>
+    <td style="text-align: center;"><b>البرنامج التدريبي</b></td>
+    <td style="text-align: center;"><b>مكان <br />
+    الدورة</b></td>
+    <td style="text-align: center;"><b>مدة<br />
+    الدورة</b></td>
+    <td colspan="3" style="text-align: center;"><b>مايو<br />
+    2017</b></td>
+    <td colspan="3" style="text-align: center;"><b>يونيو<br />
+    2017</b></td>
+     <td colspan="3" style="text-align: center;"><b>يوليو<br />
+    2017</b></td>
+     <td colspan="3" style="text-align: center;"><b>أغسطس<br />
+    2017</b></td>
+    <td colspan="3" style="text-align: center;"><b>سبتمبر<br />
+    2017</b></td>
+   <td colspan="3" style="text-align: center;"><b>اكتوبر<br />
+    2017</b></td>
+   <td colspan="3" style="text-align: center;"><b>نوفمبر<br />
+    2017</b></td>
+     <td colspan="3" style="text-align: center;"><b>ديسمبر<br />
+    2017</b></td>
+    <td colspan="3" style="text-align: center;"><b>يناير<br />
+    2018</b></td>
+   <td colspan="3" style="text-align: center;"><b>فبراير<br />
+    2018</b></td>
+    <td colspan="3" style="text-align: center"><b>مارس<br />
+    2018</b></td>
+    <td colspan="3" style="text-align: center"><b>ابريل<br />
+    2018</b></td>
+    
+  </tr>
+
+{% for course in courses %}
+  <tr >
+     
+    <td style="width: 20px; text-align: center; vertical-align:middle;">{{forloop.counter}}</td>
+    <td style="width: 250px; text-align: center;"> <a href="/course/{{course.pk}}/">{{course.name_ar}}</a> </td>
+    <td style="width: 50px; text-align: center; vertical-align: middle;"><div class="rotatetxt">{{course.name_ar}}</div></td>
+    <td style="width: 20px; text-align: center; vertical-align: middle;"><span>{{ course.date.day }}</span> Days</td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"><span>{{course.date|date:'d-m Y'}}</span></div></td>
+    {% for i in loop_times %}
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt">{{i}}</div></td>
+
+    {% endfor %}
+   <!--  <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>  
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px; background-color: #8E2C4B;" ><div class="rotatetxt"></div></td> -->
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+    <td style="width: 20px;" ><div class="rotatetxt"></div></td>
+
+  </tr>
+{% endfor %}
+</table>
+
+<br/>
+
+</div>  
+
+<div>
+<!-- {% for i in "1234567" %}
+     <p> {{i}} </p>
+    <br>
+{% endfor %} -->
+</div>
+
+
+
+ <!-- close container -->
+
+
+<!-- <div class="container">
+<p> courses  {{courses.count}} </p>  
+
+{% for course in courses %}
+
+        <p>  {{ course.name_eng }}  </p>>
+if {{course.date_year}}
+        <span class="courses_date">{{ course.date }}</span>
+        {{ value|linebreaks }}
+     <br>
+     <p> id = {{courses.id}} </p>  
+     <p> pk = {{courses.pk}} </p>  
+{% endfor %}
+ </div>
+ -->
+{% endblock %}

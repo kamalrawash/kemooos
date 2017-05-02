@@ -1,0 +1,74 @@
+{% extends 'base_2_ar.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+
+
+    <!-- course header biggens -->
+    <div class='container-fluid bigcourseband'>
+        <div class='container'>
+            <div class='row '>
+                <div class='col-md-8'>
+                    <div class="small_banner course_image">
+                        <img class='img-responsive' src='{{course.big_picture.url}}'>
+                        <p id='coursebigtitle'>{{course.name_ar}}</p>
+                    </div>
+                </div>
+                <div class='col-md-4'>
+                {% if course.demo == False %}
+                    <h2 class='coursedetails'>التفاصيل</h2>
+                    <p class='smalldetails'>{{course.date}}</p>
+                    <p class='smalldetails'>القاعة | {{course.venue_ar}}</p>
+                    <p class='smalldetails'>المقاعد المتوفرة | {{remaining_seats}} Seat</p>
+                    <p class='smalldetails'>تواصل info@kotkus.org or 98878346</p>
+                    <p class='fee'>الرسوم | {{course.price}} KWD</p>
+                    {% if remaining_seats != 0 %}
+                    <div class='trycenter'><a class="regnow" href="/register_ar/{{course.pk}}/">سجل الآن</a></div>
+                    {% endif %}
+                {% endif %}
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Course Header End -->
+    <!-- Course Details Begins -->
+      
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-4'>
+                <h2  class='courseh2'>الأهداف</h2>
+                <p>{{course.goal_ar}}</p>
+            </div>
+            <div class='col-md-4'>
+                <h2  class='courseh2'>الشروط</h2>
+                <p>{{course.conditions_ar}}</p>
+            </div>
+            <div class='col-md-4'>
+                <h2  class='courseh2'>المحاضر</h2>
+                
+                {% for tutor in course.tutor_set.all %}
+                {% if tutor.image %}
+                <img class='imag-responsive img-circle' src='{{tutor.image.url}}'>
+                {% endif %}
+                <h4>{{tutor.name_ar}}</h4>
+                <p>{{tutor.bio_ar}}</p>
+                {% endfor %}
+            </div>
+        
+        
+        
+        
+        </div>  
+      
+      
+      
+      
+      
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>KOT</title>
+    <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}">
+    
+    <link rel='stylesheet' href="{% static 'css/style.css' %}">
+    
+    <link rel='stylesheet' href="{% static 'css/menu.css' %}">
+    <link rel='stylesheet' href="{% static 'css/jquery-ui.css' %}">
+    <link rel='stylesheet' href="{% static 'css/mystyle.css' %}">
+{% block head %}
+{% endblock %}
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </head>
+  <body class="pushmenu-push">
+  <!-- menu icon area -->
+  <div class="container mob_icon">
+    <section class="buttonset">
+      <div id="nav_list"></div>
+      <div class="clearfix"></div>
+    </section>
+  </div>
+  <!-- menu icon area -->
+    <!-- header begin -->
+    <header class="header_courses">
+      <div class="container">
+        <div class="row">
+      <!-- logo begin -->
+          <div class="col-sm-3 col-lg-3 col-md-3">
+              <a title="medigate.org" class="logo" href="/"><img src="{% static 'images/logo2.png' %}"></a>
+          </div>
+      <!-- logo end -->
+        <!-- nav begin -->
+        <div class="col-sm-9 col-lg-9 col-md-9">
+        <nav>
+          <div class="pushmenu pushmenu-left">
+            <ul>
+              <li><a  href="/home_ar/">الرئيسية</a></li>
+              <li><a href="/courses_ar/">الدورات</a></li>
+              <li><a href="/newslist_ar/">الاخبار</a></li>
+              <li><a href="/aboutus_ar/">عنا</a></li>
+              <!--<li><a href="/imagegallery/">Gallery</a></li>-->
+              <li><a href="/contactus_ar/">راسنا</a></li>                                                    
+            </ul>
+          </div>
+        </nav>
+        <!-- nav end -->
+        </div>
+        </div>
+      </div>  
+    </header>
+    <!-- header end -->
+    <!-- inner page small ribbon begin -->
+    <div class="inner_page_top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 col-md-8 col-lg-8">
+            <!-- purple bar title -->
+            <h1></h1>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <!-- inner page small ribbon end -->
+    
+    {% block body %}
+
+
+    {% endblock %}
+    <!-- footer begin -->
+    <footer>
+      <div class="container hidden-xs">
+        <div class="row">
+        <div class="ftr_menu">
+          <ul class="list-inline pull-left">
+              <li><a  href="/home_ar/">الرئيسية</a></li>
+              <li><a href="/courses_ar/">الدورات</a></li>
+              <li><a href="/newslist_ar/">الاخبار</a></li>
+              <li><a href="/aboutus_ar/">عنا</a></li>
+              <!--<li><a href="/imagegallery/">Gallery</a></li>-->
+              <li><a href="/contactus_ar/">راسنا</a></li>
+            </ul>
+            <a class="pull-right acc_icon" href="#"><img src="{% static 'images/account_icon.png' %}"></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer_column">
+          <div class="col-sm-4">
+            <h6>confedence to be</h6>
+            <p class="sp_text"></p>
+            
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-sm-4">
+            <h5>Get in touch with us</h5>
+            <p class="first_txte">Phone number +965 98878346</p>
+            <p class="adress_sec">Sabah Alsalem, Kuwait<br>
+            London WC2A 3PE</p>
+          </div>
+          <div class="col-sm-4">
+            <h5>follow us</h5>
+            <ul class="list-inline social_icon">
+              <li><a href="https://www.facebook.com/profile.php?id=100013311287790&ref=br_rs"><img class="img-responsive" src="{% static 'images/fb-icon.png' %}"></a></li>
+              <li><a href="https://twitter.com/kot_kus2016"><img class="img-responsive" src="{% static 'images/twitter_icon.png' %}"></a></li>
+              <li><a href="#"><img class="img-responsive" src="{% static 'images/google_icon.png' %}"></a></li>
+
+            </ul>
+          </div>
+        </div> 
+        </div>
+      </div>  
+      <!-- footer last row begin -->
+      <div class="footer_last_row">
+        <div class="container">
+          <p class="pull-left">&copy; Copyright 2016 KOT. All rights reserved.</p>
+          <form class="pull-right hidden-xs">
+            <input onblur="this.value = this.value || this.defaultValue;" onfocus="this.value == this.defaultValue(this.value = '')" type="search" value="Search....">
+            <input type="submit"  value="">
+          </form>
+          <div class="clearfix"></div>
+        </div> 
+      </div>
+      <!-- footer last row end -->
+    </footer>
+    <!-- footer end -->
+
+
+
+    <script src="{% static 'js/slider.js' %}"></script>
+    <script src="{% static 'js/news.js' %}"></script>
+{% block buttom %}
+{% endblock %}
+<!--<script src="{% static 'js/jquery.image-gallery.min.js' %}"></script>-->
+    <script src="{% static 'js/global.js' %}"></script>
+  </body>
+</html>

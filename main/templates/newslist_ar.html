@@ -1,0 +1,64 @@
+{% extends 'base_2_ar.html' %}
+
+{% block body %}
+
+	<div class='container toppad'>
+		
+
+          {% for news in news_list %}
+
+            <div class='row'>
+                <div class='col-sm-5'>
+                    <img class='img-responsive align-center' src="{{ news.icon.url }}">
+                </div>
+                <div class='col-sm-7'>
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <h4 class='courseh2 makefornsmaller'>{{news.title_ar}}</h4>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <p>{{ news.body_ar|truncatewords:60}} <a href="/newsdetails/{{news.pk}}/">اقرأ المزيد</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <hr/>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+        <div class='row'>
+        <div class='col-sm-12'>
+        <div class='halign'>
+        	{% if news_list and news_list.paginator.num_pages > 1 %}
+
+                <span class="step-links">
+                    {% if news_list.has_previous %}
+                        <a href= "?page={{ news_list.previous_page_number }}">السابق</a>
+                    {% endif %}
+
+                        <span class="current">
+                            {{ news_list.number }} of {{ news_list.paginator.num_pages }}.
+                        </span>
+
+                    {% if news_list.has_next %}
+                        <a href="?page={{ news_list.next_page_number }}">التالي</a>
+                    {% endif %}
+                </span>
+
+        {% endif %}
+        </div>
+        </div>
+        </div>
+
+    </div>
+
+{% endblock %}

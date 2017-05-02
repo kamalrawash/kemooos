@@ -1,0 +1,30 @@
+{% extends 'baseadmin.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+
+	<div class='container'>
+		<h2>Courses</h2>
+
+		{% for course in courses %}
+			<div class='row'>
+			<a href='/coursedetailsadmin/{{course.pk}}/'>
+				<div class='col-md-4'>
+					{{course.name_eng}}
+				</div>	
+
+				<div class='col-md-4'>
+					{{course.date}}
+				</div>	
+
+				<div class='col-md-4'>
+					{{course.registrar_set.all|length}}
+				</div>	
+			</a>
+
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}

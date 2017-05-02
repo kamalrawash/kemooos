@@ -1,0 +1,145 @@
+{% extends 'base_2_ar.html' %}
+{% load staticfiles %}
+
+
+
+{% block body %}
+
+{% if trainingcourses or consultationcourses or conferancescourses or bootcampscourses %}
+     <!-- gray bg section begin -->
+     {% if trainingcourses %}
+    <section class="inner_page_courses  up_coming_sub">
+      <div class="container">
+        <div class="row">
+          <div class="site_gen_title">
+              <h2 class="pull-right"><span>تدريب</span></h2>
+              
+              <div class="clearfix"></div>
+          </div>
+          {% for course in trainingcourses %}
+	          <div class="col-sm-4 up_section flt">
+	            <a href="/course_ar/{{course.pk}}/">
+	              <img src="{{course.icon.url}}">
+	              <h3>{{course.name_ar}}</h3>
+	              <span class="">{{course.date}}</span>
+	            </a>
+	          </div>
+           {% endfor %}     
+        </div>  
+      </div>  
+    </section>
+    {% endif %}
+    <!-- gray bg section begin -->
+
+<!-- gray bg section begin -->
+     {% if consultationcourses %}
+    <section class="inner_page_courses  up_coming_sub">
+      <div class="container">
+        <div class="row">
+          <div class="site_gen_title">
+              <h2 class="pull-right"><span>استشارات</span></h2>
+              
+              <div class="clearfix"></div>
+          </div>
+          {% for course in consultationcourses %}
+	          <div class="col-sm-4 up_section flt">
+	            <a href="/course_ar/{{course.pk}}/">
+	              <img src="{{course.icon.url}}">
+	              <h3>{{course.name_ar}}</h3>
+	              <span class="">{{course.date}}</span>
+	            </a>
+	          </div>
+           {% endfor %}     
+        </div>  
+      </div>  
+    </section>
+    {% endif %}
+    <!-- gray bg section begin -->
+
+
+
+<!-- gray bg section begin -->
+     {% if conferancescourses %}
+    <section class="inner_page_courses  up_coming_sub">
+      <div class="container">
+        <div class="row">
+          <div class="site_gen_title">
+              <h2 class="pull-right"><span>مؤتمرات</span></h2>
+              
+              <div class="clearfix"></div>
+          </div>
+          {% for course in conferancescourses %}
+	          <div class="col-sm-4 up_section flt">
+	            <a href="/course_ar/{{course.pk}}/">
+	              <img src="{{course.icon.url}}">
+	              <h3>{{course.name_ar}}</h3>
+	              <span class="">{{course.date}}</span>
+	            </a>
+	          </div>
+           {% endfor %}     
+        </div>  
+      </div>  
+    </section>
+    {% endif %}
+    <!-- gray bg section begin -->
+
+
+
+<!-- gray bg section begin -->
+     {% if bootcampscourses %}
+    <section class="inner_page_courses  up_coming_sub">
+      <div class="container">
+        <div class="row">
+          <div class="site_gen_title">
+              <h2 class="pull-right"><span>دورات مكثفة</span></h2>
+              
+              <div class="clearfix"></div>
+          </div>
+          {% for course in bootcampscourses %}
+	          <div class="col-sm-4 up_section flt">
+	            <a href="/course_ar/{{course.pk}}/">
+	              <img src="{{course.icon.url}}">
+	              <h3>{{course.name_ar}}</h3>
+	              <span class="">{{course.date}}</span>
+	            </a>
+	          </div>
+           {% endfor %}     
+        </div>  
+      </div>  
+    </section>
+    {% endif %}
+    <!-- gray bg section begin -->
+
+    {% else %}
+    	<div class='container'>
+	    	
+	    		<h2 class="pull-left">More Courses are comming soon</h2>    	
+	    	
+    	</div>
+    {% endif %}
+
+
+
+    <!-- ad baner begin -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+          <a href="#"><img class="img-responsive" src="{% static 'images/ad-img.jpg' %}"></a>
+        </div> 
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="small_ad">
+            <h4>free consultation</h4>
+            <p>Fees are an estimate only and may be more depending.</p>
+            <a class="pull-right reg_btn" href="#">Register Today</a>
+            <div class="clearfix"></div>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <!-- ad banner end -->
+
+
+
+
+
+{% endblock %}
